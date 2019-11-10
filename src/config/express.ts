@@ -10,6 +10,7 @@ import cors from 'cors';
 import MySQL from './db';
 
 import { testRoutes } from '../routes/test.route';
+import { hbdRoutes } from '../routes/hbd.route';
 
 /**
 * @description - initializing application configurations and middle layers
@@ -61,6 +62,7 @@ const initDbConfigs = () => {
 */
 const initializeServerRoutes = (app: Application, io: socketDotIO.Server) => {
   testRoutes(app, io); // setting up user routes
+  hbdRoutes(app, io);
 }
 
 const setupSocketio = (io: socketDotIO.Server) => {
