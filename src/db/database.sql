@@ -12,9 +12,9 @@ CREATE TABLE user_profile (
 CREATE TABLE birth_days (
   id INT NOT NULL AUTO_INCREMENT,
   date DATE NOT NULL,  
-  time TIME,
-  phone_number VARCHAR(10),  
-  message VARCHAR(500),
+  name VARCHAR(50),
+  phone VARCHAR(10),  
+  msg VARCHAR(500),
   PRIMARY KEY (id)
 );
 

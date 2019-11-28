@@ -16,3 +16,16 @@ import { FieldInfo, MysqlError } from "mysql";
       }
    });
  }
+ export const addBDay = (req: Request, res: Response) => {
+     const add_bday_query = "insert into birth_days(`date`, `name`, `phone`,`msg`) values (?,?,?,?)";
+  Mysql.getPool().query(add_bday_query, [req.body.date, req.body.name,req.body.phone,req.body.msg], (err:any, results:any) =>
+      {if (err) {
+         console.log("Error", err);
+         res.status(500)
+            .json({"error": err});
+      } else {
+         console.log("Result: ", results);
+         res.json(results);
+      }
+   });
+ }
